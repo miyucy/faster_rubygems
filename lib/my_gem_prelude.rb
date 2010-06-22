@@ -278,7 +278,7 @@ if defined?(Gem) then
           require_paths.first.instance_variable_set(:@gem_prelude_index, true)
         end
         # gem directories must come after -I and ENV['RUBYLIB']
-        $:[$:.find{|e|e.instance_variable_defined?(:@gem_prelude_index)}||-1,0] = require_paths
+        $:[$:.find_index{|e|e.instance_variable_defined?(:@gem_prelude_index)}||-1,0] = require_paths
       end
 
       def const_missing(constant)
