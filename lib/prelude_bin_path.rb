@@ -51,9 +51,9 @@ module Gem
         numbers << 0 if numbers.empty?
         numbers
     end
-    
+
   end
-  
+
   extend QuickLoader
 
 end

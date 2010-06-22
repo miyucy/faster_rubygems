@@ -127,7 +127,7 @@ if defined?(Gem) then
 
       if defined?(RUBY_ENGINE) then
         begin
-          # jruby is not ready for this... 
+          # jruby is not ready for this...
           # it anticipates altering a full Gem version, currently, in 1.8 mode...
           # require "rubygems/defaults/#{RUBY_ENGINE}"
         rescue ::LoadError
@@ -290,7 +290,7 @@ if defined?(Gem) then
           super
         end
       end
-      
+
       def method_missing(method, *args, &block)
         QuickLoader.load_full_rubygems_library
         super unless Gem.respond_to?(method)
